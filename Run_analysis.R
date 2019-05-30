@@ -82,3 +82,12 @@ names(tidy_data)<-gsub("^f", "Frequency", names(tidy_data))
 names(tidy_data)<-gsub("tBody", "TimeBody", names(tidy_data))
 names(tidy_data)<-gsub("angle", "Angle", names(tidy_data))
 names(tidy_data)<-gsub("gravity", "Gravity", names(tidy_data))
+
+##From the data set in step 4, creates a second, independent tidy data set with 
+#the average of each variable for each activity and each subject.
+install.packages("dplyr")
+library(dplyr)
+tidy_data2 <- tidy_data %>%
+        group_by(subject, activity) %>%
+        summarise_all(funs(mean))
+write.table(tidy_data2, "tidy_data2.txt", row.name=FALSE)
