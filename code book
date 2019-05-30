@@ -1,0 +1,24 @@
+#This code aim to prepare clean data set in Getting and Cleaning Data Course Project
+
+X_test : test set 
+y_test : test labels
+X_train : training set
+y_train : training labels
+features :List of all features
+subject_test :Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+subject_train :Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+activities : Links the class labels with their activity name
+
+##merge test and train data together
+data_X : merge X test data and training data
+data_Y :merge Y test data and training data
+subject : merge subject test data and training data
+merge_data : merge X, Y, subject
+
+##Extracts only the measurements on the mean and standard deviation for each measurement
+tidy_data : grasp mean, std, Y(labels), subject from merge_data
+
+##Uses descriptive activity names to name the activities in the data set
+tidy_data$activity : add "activity" column from activities data set 
+
+##Appropriately labels the data set with descriptive variable names
